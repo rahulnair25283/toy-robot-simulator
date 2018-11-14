@@ -22,10 +22,6 @@ public class Robot {
         return this.position;
     }
 
-    public Position move() throws Exception {
-        return set(this.position.next());
-    }
-
     public Position turnLeft() throws Exception {
         if (this.position.getDirection() == null) {
             throw new Exception("Robot's direction cannot be null");

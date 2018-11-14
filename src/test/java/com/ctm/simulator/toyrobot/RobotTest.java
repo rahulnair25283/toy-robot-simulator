@@ -23,18 +23,6 @@ public class RobotTest {
     }
 
     @Test
-    public void shouldMoveRobot() throws Exception {
-
-        Robot robot = new Robot();
-        robot.set(new Position(3, 5, Direction.WEST));
-
-        Position newPosition = robot.move();
-        assertThat(newPosition.getX(), is(2));
-        assertThat(newPosition.getY(), is(5));
-        assertThat(newPosition.getDirection(), is(Direction.WEST));
-    }
-
-    @Test
     public void shouldTurnRobotToTheLeft() throws Exception {
 
         Robot robot = new Robot();

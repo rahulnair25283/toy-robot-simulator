@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TableTop {
     
-    private static final int FIRST_INDEX = 0;
+    private static final int FIRST_INDEX = 1;
 
     @Getter
     @Setter

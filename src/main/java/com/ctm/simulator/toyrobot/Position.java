@@ -24,21 +24,23 @@ public class Position {
             throw new Exception("Robot's direction cannot be null");
         }
 
+        Position newPosition = new Position(this.x, this.y, this.getDirection());
+
         switch (direction) {
         case NORTH:
-            this.y += 1;
+            newPosition.setY(newPosition.getY() + 1);
             break;
         case EAST:
-            this.x += 1;
+            newPosition.setX(newPosition.getX() + 1);
             break;
         case SOUTH:
-            this.y -= 1;
+            newPosition.setY(newPosition.getY() - 1);
             break;
         case WEST:
-            this.x -= 1;
+            newPosition.setX(newPosition.getX() - 1);
             break;
         }
 
-        return this;
+        return newPosition;
     }
 }
