@@ -15,8 +15,8 @@ public class TableTopTest {
         TableTop tableTop = new TableTop(5, 5);
 
         assertThat(tableTop.isValid(new Position(3, 1, Direction.NORTH)), is(true));
-        assertThat(tableTop.isValid(new Position(1, 1, Direction.NORTH)), is(true));
-        assertThat(tableTop.isValid(new Position(5, 5, Direction.NORTH)), is(true));
+        assertThat(tableTop.isValid(new Position(0, 0, Direction.NORTH)), is(true));
+        assertThat(tableTop.isValid(new Position(4, 4, Direction.NORTH)), is(true));
     }
 
     @Test

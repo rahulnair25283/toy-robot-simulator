@@ -19,7 +19,7 @@ public class AppTest {
     @Test
     public void shouldFailToExecutePlaceCommandIfProvidedPositionIsInvalid() throws Exception {
         App app = new App(new TableTop(5, 5), new Robot());
-        assertThat(app.execute("PLACE 0,2,NORTH"),
+        assertThat(app.execute("PLACE -1,2,NORTH"),
                 is("I cant move to the new position, I will fall off the table top"));
     }
 
@@ -36,7 +36,7 @@ public class AppTest {
     public void shouldFailToExecuteMoveCommandIfTheNextPositionIsInvalid() throws Exception {
         App app = new App(new TableTop(5, 5), new Robot());
 
-        app.execute("PLACE 1,5,NORTH");
+        app.execute("PLACE 1,4,NORTH");
 
         assertThat(app.execute("MOVE"),
                 is("I cant move to the new position, I will fall off the table top"));
@@ -46,18 +46,18 @@ public class AppTest {
     public void shouldSuccessfulltExecuteLeftCommand() throws Exception {
         App app = new App(new TableTop(5, 5), new Robot());
 
-        app.execute("PLACE 1,5,NORTH");
+        app.execute("PLACE 0,4,NORTH");
 
-        assertThat(app.execute("LEFT"), is("I am now at x1 y5 facing WEST"));
+        assertThat(app.execute("LEFT"), is("I am now at x0 y4 facing WEST"));
     }
 
     @Test
     public void shouldSuccessfullyExecuteRightCommand() throws Exception {
         App app = new App(new TableTop(5, 5), new Robot());
 
-        app.execute("PLACE 1,5,NORTH");
+        app.execute("PLACE 0,4,NORTH");
 
-        assertThat(app.execute("RIGHT"), is("I am now at x1 y5 facing EAST"));
+        assertThat(app.execute("RIGHT"), is("I am now at x0 y4 facing EAST"));
     }
 
 }

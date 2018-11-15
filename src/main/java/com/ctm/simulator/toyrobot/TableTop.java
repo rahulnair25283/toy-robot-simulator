@@ -8,8 +8,8 @@ import lombok.Setter;
 
 @AllArgsConstructor
 public class TableTop {
-    
-    private static final int FIRST_INDEX = 1;
+
+    private static final int FIRST_INDEX = 0;
 
     @Getter
     @Setter
@@ -27,7 +27,7 @@ public class TableTop {
      * @return true if the position is valid and false otherwise
      */
     public boolean isValid(Position position) {
-        return Range.closed(FIRST_INDEX, this.rows).contains(position.getX())
-                && Range.closed(FIRST_INDEX, this.columns).contains(position.getY());
+        return Range.closed(FIRST_INDEX, this.rows - 1).contains(position.getX())
+                && Range.closed(FIRST_INDEX, this.columns - 1).contains(position.getY());
     }
 }
